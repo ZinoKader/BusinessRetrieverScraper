@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 import requests
 import time
+import getpass
 
 username = None
 password = None
@@ -24,7 +25,7 @@ def getCompanyInfo(orgnum):
     if not username:
         username = input("Ditt Liu-ID (ex danba631): ")
     if not password:
-        password = input("Ditt LiU-lösenord: ")
+        password = getpass.getpass("Ditt LiU-lösenord (inga tecken visas när du skriver): ")
         print("Autentiserad! ---\n\n")
 
     requestsession = requests.session()
